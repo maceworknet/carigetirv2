@@ -1,4 +1,5 @@
 import frappe
+from frappe.utils import today
 
 def get_current_company():
     """
@@ -6,8 +7,8 @@ def get_current_company():
     """
     user = frappe.session.user
     if user == "Administrator":
-        # For SaaS Super Admin, may need to handle differently or return a default
-        pass
+        # For SaaS Super Admin, return the first active company for testing
+        return frappe.db.get_value("CG Company", {"is_active": 1}, "name")
         
     company_user = frappe.db.get_value("CG Company User", {"user": user}, "company")
     return company_user
@@ -19,10 +20,14 @@ def is_subscription_active(company):
     if not company:
         return False
         
-    subscription = frappe.get_doc("CG Subscription", {"company": company, "status": "Active"})
-    if subscription and subscription.end_date >= frappe.utils.today():
-        return True
-    return False
+    # Get active subscription where end_date is >= today
+    subscription = frappe.db.get_value(
+        "CG Subscription", 
+        {"company": company, "status": "Active", "end_date": (">=", today())},
+        "name"
+    )
+    
+    return bool(subscription)
 
 def get_company_plan(company):
     """
@@ -31,7 +36,11 @@ def get_company_plan(company):
     if not company:
         return None
         
-    subscription = frappe.db.get_value("CG Subscription", {"company": company, "status": "Active"}, "plan")
+    subscription = frappe.db.get_value(
+        "CG Subscription", 
+        {"company": company, "status": "Active", "end_date": (">=", today())}, 
+        "plan"
+    )
     return subscription
 
 def get_enabled_features(company):
@@ -47,12 +56,16 @@ def get_enabled_features(company):
         plan_features = frappe.get_all("CG Plan Feature", filters={"parent": plan}, pluck="feature")
         for f in plan_features:
             feature_key = frappe.db.get_value("CG Feature", f, "feature_key")
-            enabled_features.append(feature_key)
+            if feature_key:
+                enabled_features.append(feature_key)
             
     # Check overrides
     overrides = frappe.get_all("CG Company Feature Override", filters={"company": company}, fields=["feature", "is_enabled"])
     for override in overrides:
         feature_key = frappe.db.get_value("CG Feature", override.feature, "feature_key")
+        if not feature_key:
+            continue
+            
         if override.is_enabled and feature_key not in enabled_features:
             enabled_features.append(feature_key)
         elif not override.is_enabled and feature_key in enabled_features:
@@ -83,17 +96,21 @@ def check_usage_limit(company, limit_key):
         return True, "Aktif bir paket bulunamadı."
         
     plan_doc = frappe.get_doc("CG Plan", plan)
-    
-    # Example logic: limit_key = 'user_limit'
     limit_value = plan_doc.get(limit_key)
     
     if limit_value == 0: # 0 means unlimited
         return False, None
         
-    # TODO: Calculate current usage based on limit_key and compare
     current_usage = 0 
     
+    if limit_key == 'user_limit':
+        current_usage = frappe.db.count('CG Company User', {'company': company})
+    elif limit_key == 'branch_limit':
+        current_usage = frappe.db.count('CG Branch', {'company': company})
+    elif limit_key == 'warehouse_limit':
+        current_usage = frappe.db.count('CG Warehouse', {'company': company})
+        
     if current_usage >= limit_value:
-        return True, f"{limit_key} limitine ulaşıldı. Lütfen paketinizi yükseltin."
+        return True, f"{limit_key} limitine ulaşıldı ({current_usage}/{limit_value}). Lütfen paketinizi yükseltin."
         
     return False, None
