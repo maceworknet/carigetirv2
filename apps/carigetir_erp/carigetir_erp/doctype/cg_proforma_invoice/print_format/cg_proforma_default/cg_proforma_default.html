@@ -1,0 +1,74 @@
+
+<style>
+    .proforma-header { text-align: center; border-bottom: 2px solid #ddd; padding-bottom: 10px; margin-bottom: 20px; }
+    .proforma-details { margin-bottom: 30px; }
+    .proforma-table { width: 100%; border-collapse: collapse; }
+    .proforma-table th, .proforma-table td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    .proforma-totals { margin-top: 20px; width: 50%; float: right; }
+    .proforma-totals td { padding: 5px; }
+    .text-right { text-align: right !important; }
+</style>
+
+<div class="proforma-header">
+    <h2>PROFORMA FATURA</h2>
+    <p>Belge No: {{ doc.name }} | Tarih: {{ doc.get_formatted("date") }}</p>
+</div>
+
+<div class="proforma-details">
+    <strong>Sayın:</strong><br>
+    {{ doc.customer }}<br>
+    Geçerlilik Tarihi: {{ doc.get_formatted("valid_until") or '-' }}
+</div>
+
+<table class="proforma-table">
+    <thead>
+        <tr>
+            <th>Ürün/Hizmet</th>
+            <th>Miktar</th>
+            <th>Birim</th>
+            <th class="text-right">Birim Fiyat</th>
+            <th class="text-right">İndirim</th>
+            <th class="text-right">Tutar</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in doc.items %}
+        <tr>
+            <td>{{ item.item_name }}<br><small>{{ item.description or '' }}</small></td>
+            <td>{{ item.qty }}</td>
+            <td>{{ item.uom }}</td>
+            <td class="text-right">{{ item.get_formatted("rate") }}</td>
+            <td class="text-right">{{ item.get_formatted("discount") }}</td>
+            <td class="text-right">{{ item.get_formatted("amount") }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<table class="proforma-totals text-right">
+    <tr>
+        <td><strong>Ara Toplam:</strong></td>
+        <td>{{ doc.get_formatted("subtotal") }}</td>
+    </tr>
+    <tr>
+        <td><strong>İndirim:</strong></td>
+        <td>{{ doc.get_formatted("discount_amount") }}</td>
+    </tr>
+    <tr>
+        <td><strong>KDV:</strong></td>
+        <td>{{ doc.get_formatted("tax_total") }}</td>
+    </tr>
+    <tr>
+        <td><strong>Genel Toplam ({{ doc.currency }}):</strong></td>
+        <td><strong>{{ doc.get_formatted("grand_total") }}</strong></td>
+    </tr>
+</table>
+
+<div style="clear: both;"></div>
+
+<div style="margin-top: 50px;">
+    <strong>Ödeme Şartları:</strong>
+    <p>{{ doc.payment_terms or '-' }}</p>
+    <strong>Notlar:</strong>
+    <p>{{ doc.notes or '-' }}</p>
+</div>

@@ -1,0 +1,98 @@
+{
+    "name": "CariGetir ERP",
+    "doctype": "Workspace",
+    "title": "ERP Dashboard",
+    "module": "carigetir_erp",
+    "is_standard": 1,
+    "charts": [],
+    "shortcuts": [
+        {
+            "type": "DocType",
+            "link_to": "CG Customer",
+            "label": "Müşteriler"
+        },
+        {
+            "type": "DocType",
+            "link_to": "CG Supplier",
+            "label": "Tedarikçiler"
+        },
+        {
+            "type": "DocType",
+            "link_to": "CG Current Account",
+            "label": "Cari Hesaplar"
+        },
+        {
+            "type": "DocType",
+            "link_to": "CG Proforma Invoice",
+            "label": "Proforma Faturalar"
+        }
+    ],
+    "links": [
+        {
+            "type": "Card Break",
+            "label": "Cari İşlemler"
+        },
+        {
+            "type": "Link",
+            "link_type": "DocType",
+            "link_to": "CG Customer",
+            "label": "Müşteriler"
+        },
+        {
+            "type": "Link",
+            "link_type": "DocType",
+            "link_to": "CG Supplier",
+            "label": "Tedarikçiler"
+        },
+        {
+            "type": "Link",
+            "link_type": "DocType",
+            "link_to": "CG Current Account",
+            "label": "Cari Hesaplar"
+        },
+        {
+            "type": "Link",
+            "link_type": "DocType",
+            "link_to": "CG Current Transaction",
+            "label": "Cari Hareketler"
+        },
+        {
+            "type": "Card Break",
+            "label": "Finans İşlemleri"
+        },
+        {
+            "type": "Link",
+            "link_type": "DocType",
+            "link_to": "CG Income",
+            "label": "Gelirler"
+        },
+        {
+            "type": "Link",
+            "link_type": "DocType",
+            "link_to": "CG Expense",
+            "label": "Giderler"
+        },
+        {
+            "type": "Link",
+            "link_type": "DocType",
+            "link_to": "CG Payment",
+            "label": "Ödemeler"
+        },
+        {
+            "type": "Link",
+            "link_type": "DocType",
+            "link_to": "CG Collection",
+            "label": "Tahsilatlar"
+        },
+        {
+            "type": "Card Break",
+            "label": "Satış & Teklif"
+        },
+        {
+            "type": "Link",
+            "link_type": "DocType",
+            "link_to": "CG Proforma Invoice",
+            "label": "Proforma Faturalar"
+        }
+    ]
+}
