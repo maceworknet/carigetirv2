@@ -1,0 +1,9 @@
+{
+    "name": "Cari Hesap Ekstresi",
+    "doctype": "Report",
+    "report_name": "Cari Hesap Ekstresi",
+    "ref_doctype": "CG Current Account",
+    "report_type": "Script Report",
+    "is_standard": "Yes",
+    "module": "carigetir_erp"
+}

@@ -1,0 +1,7 @@
+{
+    "name": "cg-pos-screen",
+    "doctype": "Page",
+    "title": "CariGetir POS",
+    "module": "carigetir_pos",
+    "standard": "Yes"
+}
