@@ -1,7 +1,37 @@
 {
     "name": "Cg Income",
     "doctype": "DocType",
-    "fields": [],
+    "fields": [
+        {
+            "fieldname": "company",
+            "label": "Firma",
+            "fieldtype": "Link",
+            "options": "CG Company",
+            "reqd": 1
+        },
+        {
+            "fieldname": "date",
+            "label": "Tarih",
+            "fieldtype": "Date",
+            "reqd": 1
+        },
+        {
+            "fieldname": "amount",
+            "label": "Tutar",
+            "fieldtype": "Currency",
+            "reqd": 1
+        },
+        {
+            "fieldname": "category",
+            "label": "Kategori",
+            "fieldtype": "Data"
+        },
+        {
+            "fieldname": "description",
+            "label": "Açıklama",
+            "fieldtype": "Small Text"
+        }
+    ],
     "module": "carigetir_erp",
     "custom": 0
 }

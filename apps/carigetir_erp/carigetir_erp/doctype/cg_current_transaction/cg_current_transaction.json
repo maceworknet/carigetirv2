@@ -1,7 +1,63 @@
 {
     "name": "Cg Current_Transaction",
     "doctype": "DocType",
-    "fields": [],
+    "fields": [
+        {
+            "fieldname": "company",
+            "label": "Firma",
+            "fieldtype": "Link",
+            "options": "CG Company",
+            "reqd": 1
+        },
+        {
+            "fieldname": "current_account",
+            "label": "Cari Hesap",
+            "fieldtype": "Link",
+            "options": "CG Current Account",
+            "reqd": 1
+        },
+        {
+            "fieldname": "posting_date",
+            "label": "İşlem Tarihi",
+            "fieldtype": "Date",
+            "reqd": 1
+        },
+        {
+            "fieldname": "transaction_type",
+            "label": "İşlem Yönü",
+            "fieldtype": "Select",
+            "options": "Borç\nAlacak",
+            "reqd": 1
+        },
+        {
+            "fieldname": "amount",
+            "label": "Tutar",
+            "fieldtype": "Currency",
+            "reqd": 1
+        },
+        {
+            "fieldname": "description",
+            "label": "Açıklama",
+            "fieldtype": "Data"
+        },
+        {
+            "fieldname": "system_section",
+            "label": "Sistem Bağlantıları",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "reference_doctype",
+            "label": "Referans Belge Tipi",
+            "fieldtype": "Data",
+            "read_only": 1
+        },
+        {
+            "fieldname": "reference_name",
+            "label": "Referans Belge No",
+            "fieldtype": "Data",
+            "read_only": 1
+        }
+    ],
     "module": "carigetir_erp",
     "custom": 0
 }

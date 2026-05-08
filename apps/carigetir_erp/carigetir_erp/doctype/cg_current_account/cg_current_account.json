@@ -1,7 +1,35 @@
 {
     "name": "Cg Current_Account",
     "doctype": "DocType",
-    "fields": [],
+    "fields": [
+        {
+            "fieldname": "company",
+            "label": "Firma",
+            "fieldtype": "Link",
+            "options": "CG Company",
+            "reqd": 1
+        },
+        {
+            "fieldname": "account_name",
+            "label": "Hesap Adı",
+            "fieldtype": "Data",
+            "reqd": 1
+        },
+        {
+            "fieldname": "account_type",
+            "label": "Hesap Türü",
+            "fieldtype": "Select",
+            "options": "Müşteri\nTedarikçi\nGenel\nBanka\nKasa",
+            "reqd": 1
+        },
+        {
+            "fieldname": "balance",
+            "label": "Güncel Bakiye",
+            "fieldtype": "Currency",
+            "read_only": 1,
+            "default": "0"
+        }
+    ],
     "module": "carigetir_erp",
     "custom": 0
 }

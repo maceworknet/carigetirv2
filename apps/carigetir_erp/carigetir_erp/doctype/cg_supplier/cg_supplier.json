@@ -1,7 +1,68 @@
 {
     "name": "Cg Supplier",
     "doctype": "DocType",
-    "fields": [],
+    "fields": [
+        {
+            "fieldname": "company",
+            "label": "Firma",
+            "fieldtype": "Link",
+            "options": "CG Company",
+            "reqd": 1
+        },
+        {
+            "fieldname": "supplier_name",
+            "label": "Tedarikçi Adı",
+            "fieldtype": "Data",
+            "reqd": 1
+        },
+        {
+            "fieldname": "contact_section",
+            "label": "İletişim Bilgileri",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "phone",
+            "label": "Telefon",
+            "fieldtype": "Data"
+        },
+        {
+            "fieldname": "email",
+            "label": "E-Posta",
+            "fieldtype": "Data"
+        },
+        {
+            "fieldname": "tax_section",
+            "label": "Vergi Bilgileri",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "tax_id",
+            "label": "Vergi Numarası / TCKN",
+            "fieldtype": "Data"
+        },
+        {
+            "fieldname": "tax_office",
+            "label": "Vergi Dairesi",
+            "fieldtype": "Data"
+        },
+        {
+            "fieldname": "address",
+            "label": "Adres",
+            "fieldtype": "Small Text"
+        },
+        {
+            "fieldname": "account_section",
+            "label": "Hesap Bilgileri",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "current_account",
+            "label": "Bağlı Cari Hesap",
+            "fieldtype": "Link",
+            "options": "CG Current Account",
+            "read_only": 1
+        }
+    ],
     "module": "carigetir_erp",
     "custom": 0
 }
