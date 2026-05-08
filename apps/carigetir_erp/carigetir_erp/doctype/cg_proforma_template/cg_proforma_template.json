@@ -1,7 +1,36 @@
 {
     "name": "Cg Proforma_Template",
     "doctype": "DocType",
-    "fields": [],
+    "fields": [
+        {
+            "fieldname": "company",
+            "label": "Firma",
+            "fieldtype": "Link",
+            "options": "CG Company",
+            "reqd": 1
+        },
+        {
+            "fieldname": "template_name",
+            "label": "Şablon Adı",
+            "fieldtype": "Data",
+            "reqd": 1
+        },
+        {
+            "fieldname": "payment_terms",
+            "label": "Ödeme Şartları",
+            "fieldtype": "Text"
+        },
+        {
+            "fieldname": "delivery_terms",
+            "label": "Teslimat Şartları",
+            "fieldtype": "Text"
+        },
+        {
+            "fieldname": "notes",
+            "label": "Açıklama / Notlar",
+            "fieldtype": "Text"
+        }
+    ],
     "module": "carigetir_erp",
     "custom": 0
 }

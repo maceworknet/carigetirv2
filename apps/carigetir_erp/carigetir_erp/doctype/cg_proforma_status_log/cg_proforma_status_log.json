@@ -1,7 +1,33 @@
 {
     "name": "Cg Proforma_Status_Log",
     "doctype": "DocType",
-    "fields": [],
+    "fields": [
+        {
+            "fieldname": "proforma_invoice",
+            "label": "Proforma Fatura",
+            "fieldtype": "Link",
+            "options": "CG Proforma Invoice",
+            "reqd": 1
+        },
+        {
+            "fieldname": "status",
+            "label": "Durum",
+            "fieldtype": "Data",
+            "reqd": 1
+        },
+        {
+            "fieldname": "date",
+            "label": "Tarih/Saat",
+            "fieldtype": "Datetime",
+            "reqd": 1
+        },
+        {
+            "fieldname": "changed_by",
+            "label": "İşlemi Yapan",
+            "fieldtype": "Data",
+            "reqd": 1
+        }
+    ],
     "module": "carigetir_erp",
     "custom": 0
 }

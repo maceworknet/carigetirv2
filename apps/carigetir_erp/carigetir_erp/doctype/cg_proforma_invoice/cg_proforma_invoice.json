@@ -1,7 +1,107 @@
 {
     "name": "Cg Proforma_Invoice",
     "doctype": "DocType",
-    "fields": [],
+    "fields": [
+        {
+            "fieldname": "company",
+            "label": "Firma",
+            "fieldtype": "Link",
+            "options": "CG Company",
+            "reqd": 1
+        },
+        {
+            "fieldname": "customer",
+            "label": "Müşteri",
+            "fieldtype": "Link",
+            "options": "CG Customer",
+            "reqd": 1
+        },
+        {
+            "fieldname": "date",
+            "label": "Düzenleme Tarihi",
+            "fieldtype": "Date",
+            "reqd": 1
+        },
+        {
+            "fieldname": "valid_until",
+            "label": "Geçerlilik Tarihi",
+            "fieldtype": "Date"
+        },
+        {
+            "fieldname": "currency",
+            "label": "Para Birimi",
+            "fieldtype": "Data",
+            "default": "TRY"
+        },
+        {
+            "fieldname": "status",
+            "label": "Durum",
+            "fieldtype": "Select",
+            "options": "Taslak\nGönderildi\nOnaylandı\nReddedildi\nİptal Edildi\nFaturaya Dönüştürüldü",
+            "default": "Taslak"
+        },
+        {
+            "fieldname": "items_section",
+            "label": "Kalemler",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "items",
+            "label": "Ürün/Hizmet Kalemleri",
+            "fieldtype": "Table",
+            "options": "CG Proforma Invoice Item",
+            "reqd": 1
+        },
+        {
+            "fieldname": "totals_section",
+            "label": "Toplamlar",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "subtotal",
+            "label": "Ara Toplam",
+            "fieldtype": "Currency",
+            "read_only": 1
+        },
+        {
+            "fieldname": "discount_amount",
+            "label": "Toplam İndirim",
+            "fieldtype": "Currency",
+            "read_only": 1
+        },
+        {
+            "fieldname": "tax_total",
+            "label": "KDV Toplamı",
+            "fieldtype": "Currency",
+            "read_only": 1
+        },
+        {
+            "fieldname": "grand_total",
+            "label": "Genel Toplam",
+            "fieldtype": "Currency",
+            "read_only": 1
+        },
+        {
+            "fieldname": "terms_section",
+            "label": "Şartlar ve Notlar",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "payment_terms",
+            "label": "Ödeme Şartları",
+            "fieldtype": "Text"
+        },
+        {
+            "fieldname": "delivery_terms",
+            "label": "Teslimat Şartları",
+            "fieldtype": "Text"
+        },
+        {
+            "fieldname": "notes",
+            "label": "Açıklama / Notlar",
+            "fieldtype": "Text"
+        }
+    ],
     "module": "carigetir_erp",
     "custom": 0
 }
