@@ -1,0 +1,7 @@
+{
+    "name": "Cg Receipt_Print_Log",
+    "doctype": "DocType",
+    "fields": [],
+    "module": "carigetir_pos",
+    "custom": 0
+}
