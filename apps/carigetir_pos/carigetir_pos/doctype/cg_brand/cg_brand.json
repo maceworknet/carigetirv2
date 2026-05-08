@@ -1,7 +1,20 @@
 {
     "name": "Cg Brand",
     "doctype": "DocType",
-    "fields": [],
+    "fields": [
+        {
+            "fieldname": "company",
+            "label": "Firma",
+            "fieldtype": "Link",
+            "options": "CG Company",
+            "reqd": 1
+        },
+        {
+            "fieldname": "name_field",
+            "label": "Kayıt Adı",
+            "fieldtype": "Data"
+        }
+    ],
     "module": "carigetir_pos",
     "custom": 0
 }

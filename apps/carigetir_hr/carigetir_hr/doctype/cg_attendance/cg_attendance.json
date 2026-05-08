@@ -1,7 +1,35 @@
 {
     "name": "Cg Attendance",
     "doctype": "DocType",
-    "fields": [],
+    "fields": [
+        {
+            "fieldname": "company",
+            "label": "Firma",
+            "fieldtype": "Link",
+            "options": "CG Company",
+            "reqd": 1
+        },
+        {
+            "fieldname": "employee",
+            "label": "Personel",
+            "fieldtype": "Link",
+            "options": "CG Employee",
+            "reqd": 1
+        },
+        {
+            "fieldname": "date",
+            "label": "Tarih",
+            "fieldtype": "Date",
+            "reqd": 1
+        },
+        {
+            "fieldname": "status",
+            "label": "Durum",
+            "fieldtype": "Select",
+            "options": "Geldi\nGelmedi\nYarım Gün\nİzinli",
+            "reqd": 1
+        }
+    ],
     "module": "carigetir_hr",
     "custom": 0
 }

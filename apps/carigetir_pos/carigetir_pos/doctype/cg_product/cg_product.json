@@ -1,7 +1,96 @@
 {
     "name": "Cg Product",
     "doctype": "DocType",
-    "fields": [],
+    "fields": [
+        {
+            "fieldname": "company",
+            "label": "Firma",
+            "fieldtype": "Link",
+            "options": "CG Company",
+            "reqd": 1
+        },
+        {
+            "fieldname": "product_name",
+            "label": "Ürün Adı",
+            "fieldtype": "Data",
+            "reqd": 1
+        },
+        {
+            "fieldname": "product_code",
+            "label": "Ürün Kodu",
+            "fieldtype": "Data",
+            "unique": 1
+        },
+        {
+            "fieldname": "barcode",
+            "label": "Barkod",
+            "fieldtype": "Data"
+        },
+        {
+            "fieldname": "category",
+            "label": "Kategori",
+            "fieldtype": "Link",
+            "options": "CG Product Category"
+        },
+        {
+            "fieldname": "brand",
+            "label": "Marka",
+            "fieldtype": "Link",
+            "options": "CG Brand"
+        },
+        {
+            "fieldname": "uom",
+            "label": "Birim",
+            "fieldtype": "Data",
+            "default": "Adet"
+        },
+        {
+            "fieldname": "pricing_section",
+            "label": "Fiyatlandırma",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "purchase_price",
+            "label": "Alış Fiyatı",
+            "fieldtype": "Currency"
+        },
+        {
+            "fieldname": "selling_price",
+            "label": "Satış Fiyatı",
+            "fieldtype": "Currency",
+            "reqd": 1
+        },
+        {
+            "fieldname": "tax_rate",
+            "label": "KDV Oranı",
+            "fieldtype": "Float",
+            "default": "0"
+        },
+        {
+            "fieldname": "stock_section",
+            "label": "Stok Bilgisi",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "current_stock",
+            "label": "Mevcut Stok",
+            "fieldtype": "Float",
+            "read_only": 1,
+            "default": "0"
+        },
+        {
+            "fieldname": "critical_stock",
+            "label": "Kritik Stok Seviyesi",
+            "fieldtype": "Float",
+            "default": "10"
+        },
+        {
+            "fieldname": "is_active",
+            "label": "Aktif",
+            "fieldtype": "Check",
+            "default": "1"
+        }
+    ],
     "module": "carigetir_pos",
     "custom": 0
 }

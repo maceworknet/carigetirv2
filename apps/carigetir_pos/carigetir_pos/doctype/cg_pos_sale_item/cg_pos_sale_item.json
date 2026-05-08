@@ -1,7 +1,39 @@
 {
     "name": "Cg Pos_Sale_Item",
     "doctype": "DocType",
-    "fields": [],
+    "fields": [
+        {
+            "fieldname": "product",
+            "label": "Ürün",
+            "fieldtype": "Link",
+            "options": "CG Product",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "qty",
+            "label": "Miktar",
+            "fieldtype": "Float",
+            "reqd": 1,
+            "default": "1",
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "rate",
+            "label": "Birim Fiyat",
+            "fieldtype": "Currency",
+            "reqd": 1,
+            "in_list_view": 1
+        },
+        {
+            "fieldname": "amount",
+            "label": "Toplam",
+            "fieldtype": "Currency",
+            "read_only": 1,
+            "in_list_view": 1
+        }
+    ],
     "module": "carigetir_pos",
-    "custom": 0
+    "custom": 0,
+    "istable": 1
 }

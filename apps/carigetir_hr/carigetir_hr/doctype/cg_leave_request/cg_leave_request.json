@@ -1,7 +1,53 @@
 {
     "name": "Cg Leave_Request",
     "doctype": "DocType",
-    "fields": [],
+    "fields": [
+        {
+            "fieldname": "company",
+            "label": "Firma",
+            "fieldtype": "Link",
+            "options": "CG Company",
+            "reqd": 1
+        },
+        {
+            "fieldname": "employee",
+            "label": "Personel",
+            "fieldtype": "Link",
+            "options": "CG Employee",
+            "reqd": 1
+        },
+        {
+            "fieldname": "leave_type",
+            "label": "İzin Türü",
+            "fieldtype": "Select",
+            "options": "Yıllık İzin\nMazeret İzni\nSağlık İzni\nÜcretsiz İzin"
+        },
+        {
+            "fieldname": "from_date",
+            "label": "Başlangıç Tarihi",
+            "fieldtype": "Date",
+            "reqd": 1
+        },
+        {
+            "fieldname": "to_date",
+            "label": "Bitiş Tarihi",
+            "fieldtype": "Date",
+            "reqd": 1
+        },
+        {
+            "fieldname": "total_days",
+            "label": "Toplam Gün",
+            "fieldtype": "Float",
+            "read_only": 1
+        },
+        {
+            "fieldname": "status",
+            "label": "Durum",
+            "fieldtype": "Select",
+            "options": "Bekliyor\nOnaylandı\nReddedildi",
+            "default": "Bekliyor"
+        }
+    ],
     "module": "carigetir_hr",
     "custom": 0
 }

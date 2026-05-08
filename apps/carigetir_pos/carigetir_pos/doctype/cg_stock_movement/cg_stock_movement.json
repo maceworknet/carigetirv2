@@ -1,7 +1,59 @@
 {
     "name": "Cg Stock_Movement",
     "doctype": "DocType",
-    "fields": [],
+    "fields": [
+        {
+            "fieldname": "company",
+            "label": "Firma",
+            "fieldtype": "Link",
+            "options": "CG Company",
+            "reqd": 1
+        },
+        {
+            "fieldname": "product",
+            "label": "Ürün",
+            "fieldtype": "Link",
+            "options": "CG Product",
+            "reqd": 1
+        },
+        {
+            "fieldname": "warehouse",
+            "label": "Depo",
+            "fieldtype": "Link",
+            "options": "CG Warehouse"
+        },
+        {
+            "fieldname": "movement_type",
+            "label": "İşlem Türü",
+            "fieldtype": "Select",
+            "options": "Giriş\nÇıkış\nTransfer\nİade",
+            "reqd": 1
+        },
+        {
+            "fieldname": "qty",
+            "label": "Miktar",
+            "fieldtype": "Float",
+            "reqd": 1
+        },
+        {
+            "fieldname": "previous_stock",
+            "label": "Önceki Stok",
+            "fieldtype": "Float",
+            "read_only": 1
+        },
+        {
+            "fieldname": "new_stock",
+            "label": "Yeni Stok",
+            "fieldtype": "Float",
+            "read_only": 1
+        },
+        {
+            "fieldname": "date",
+            "label": "Tarih/Saat",
+            "fieldtype": "Datetime",
+            "reqd": 1
+        }
+    ],
     "module": "carigetir_pos",
     "custom": 0
 }

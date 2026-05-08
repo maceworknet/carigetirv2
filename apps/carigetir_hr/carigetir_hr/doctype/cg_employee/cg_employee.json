@@ -1,7 +1,49 @@
 {
     "name": "Cg Employee",
     "doctype": "DocType",
-    "fields": [],
+    "fields": [
+        {
+            "fieldname": "company",
+            "label": "Firma",
+            "fieldtype": "Link",
+            "options": "CG Company",
+            "reqd": 1
+        },
+        {
+            "fieldname": "employee_name",
+            "label": "Personel Adı",
+            "fieldtype": "Data",
+            "reqd": 1
+        },
+        {
+            "fieldname": "department",
+            "label": "Departman",
+            "fieldtype": "Link",
+            "options": "CG Department"
+        },
+        {
+            "fieldname": "position",
+            "label": "Pozisyon",
+            "fieldtype": "Link",
+            "options": "CG Position"
+        },
+        {
+            "fieldname": "join_date",
+            "label": "İşe Giriş Tarihi",
+            "fieldtype": "Date"
+        },
+        {
+            "fieldname": "salary",
+            "label": "Maaş",
+            "fieldtype": "Currency"
+        },
+        {
+            "fieldname": "is_active",
+            "label": "Aktif Çalışan",
+            "fieldtype": "Check",
+            "default": "1"
+        }
+    ],
     "module": "carigetir_hr",
     "custom": 0
 }
