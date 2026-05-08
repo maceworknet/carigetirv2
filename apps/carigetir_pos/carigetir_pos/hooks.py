@@ -1,0 +1,8 @@
+app_name = 'carigetir_pos'
+app_title = 'Carigetir Pos'
+app_publisher = 'CariGetir'
+app_description = 'CariGetir V2 carigetir_pos'
+app_icon = 'octicon octicon-file-directory'
+app_color = 'grey'
+app_email = 'info@carigetir.com'
+app_license = 'MIT'
