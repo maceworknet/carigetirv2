@@ -6,3 +6,9 @@ app_icon = 'octicon octicon-file-directory'
 app_color = 'grey'
 app_email = 'info@carigetir.com'
 app_license = 'MIT'
+
+scheduler_events = {
+    "daily": [
+        "carigetir_core.carigetir_core.utils.subscription.check_expired_subscriptions"
+    ]
+}
