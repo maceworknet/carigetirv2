@@ -1,7 +1,28 @@
 {
     "name": "Cg Company_Feature_Override",
     "doctype": "DocType",
-    "fields": [],
+    "fields": [
+        {
+            "fieldname": "company",
+            "label": "Firma",
+            "fieldtype": "Link",
+            "options": "CG Company",
+            "reqd": 1
+        },
+        {
+            "fieldname": "feature",
+            "label": "Özellik",
+            "fieldtype": "Link",
+            "options": "CG Feature",
+            "reqd": 1
+        },
+        {
+            "fieldname": "is_enabled",
+            "label": "Açık",
+            "fieldtype": "Check",
+            "default": "1"
+        }
+    ],
     "module": "carigetir_core",
     "custom": 0
 }

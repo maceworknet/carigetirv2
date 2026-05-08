@@ -1,7 +1,27 @@
 {
     "name": "Cg Feature",
     "doctype": "DocType",
-    "fields": [],
+    "fields": [
+        {
+            "fieldname": "feature_key",
+            "label": "Özellik Anahtarı",
+            "fieldtype": "Data",
+            "reqd": 1,
+            "unique": 1
+        },
+        {
+            "fieldname": "feature_name",
+            "label": "Özellik Adı",
+            "fieldtype": "Data",
+            "reqd": 1
+        },
+        {
+            "fieldname": "module",
+            "label": "Modül",
+            "fieldtype": "Select",
+            "options": "Core\nERP\nPOS\nHR"
+        }
+    ],
     "module": "carigetir_core",
     "custom": 0
 }

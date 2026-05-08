@@ -1,7 +1,16 @@
 {
     "name": "Cg Plan_Feature",
     "doctype": "DocType",
-    "fields": [],
+    "fields": [
+        {
+            "fieldname": "feature",
+            "label": "Özellik",
+            "fieldtype": "Link",
+            "options": "CG Feature",
+            "reqd": 1,
+            "in_list_view": 1
+        }
+    ],
     "module": "carigetir_core",
     "custom": 0
 }

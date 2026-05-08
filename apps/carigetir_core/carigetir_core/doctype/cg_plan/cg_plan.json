@@ -1,7 +1,61 @@
 {
     "name": "Cg Plan",
     "doctype": "DocType",
-    "fields": [],
+    "fields": [
+        {
+            "fieldname": "plan_name",
+            "label": "Paket Adı",
+            "fieldtype": "Data",
+            "reqd": 1
+        },
+        {
+            "fieldname": "is_active",
+            "label": "Aktif",
+            "fieldtype": "Check",
+            "default": "1"
+        },
+        {
+            "fieldname": "description",
+            "label": "Açıklama",
+            "fieldtype": "Small Text"
+        },
+        {
+            "fieldname": "pricing_section",
+            "label": "Fiyatlandırma",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "monthly_price",
+            "label": "Aylık Fiyat",
+            "fieldtype": "Currency"
+        },
+        {
+            "fieldname": "yearly_price",
+            "label": "Yıllık Fiyat",
+            "fieldtype": "Currency"
+        },
+        {
+            "fieldname": "limits_section",
+            "label": "Limitler",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "user_limit",
+            "label": "Kullanıcı Limiti",
+            "fieldtype": "Int",
+            "description": "Sınırsız için 0 yazın"
+        },
+        {
+            "fieldname": "branch_limit",
+            "label": "Şube Limiti",
+            "fieldtype": "Int"
+        },
+        {
+            "fieldname": "warehouse_limit",
+            "label": "Depo Limiti",
+            "fieldtype": "Int"
+        }
+    ],
     "module": "carigetir_core",
     "custom": 0
 }

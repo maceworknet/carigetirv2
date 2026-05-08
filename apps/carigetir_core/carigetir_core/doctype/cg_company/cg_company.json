@@ -1,7 +1,55 @@
 {
     "name": "Cg Company",
     "doctype": "DocType",
-    "fields": [],
+    "fields": [
+        {
+            "fieldname": "company_name",
+            "label": "Firma Adı",
+            "fieldtype": "Data",
+            "reqd": 1
+        },
+        {
+            "fieldname": "is_active",
+            "label": "Aktif",
+            "fieldtype": "Check",
+            "default": "1"
+        },
+        {
+            "fieldname": "contact_section",
+            "label": "İletişim Bilgileri",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "phone",
+            "label": "Telefon",
+            "fieldtype": "Data"
+        },
+        {
+            "fieldname": "email",
+            "label": "E-Posta",
+            "fieldtype": "Data"
+        },
+        {
+            "fieldname": "tax_section",
+            "label": "Vergi Bilgileri",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "tax_id",
+            "label": "Vergi Numarası",
+            "fieldtype": "Data"
+        },
+        {
+            "fieldname": "tax_office",
+            "label": "Vergi Dairesi",
+            "fieldtype": "Data"
+        },
+        {
+            "fieldname": "address",
+            "label": "Adres",
+            "fieldtype": "Small Text"
+        }
+    ],
     "module": "carigetir_core",
     "custom": 0
 }

@@ -1,7 +1,39 @@
 {
     "name": "Cg Subscription",
     "doctype": "DocType",
-    "fields": [],
+    "fields": [
+        {
+            "fieldname": "company",
+            "label": "Firma",
+            "fieldtype": "Link",
+            "options": "CG Company",
+            "reqd": 1
+        },
+        {
+            "fieldname": "plan",
+            "label": "Paket",
+            "fieldtype": "Link",
+            "options": "CG Plan",
+            "reqd": 1
+        },
+        {
+            "fieldname": "status",
+            "label": "Durum",
+            "fieldtype": "Select",
+            "options": "Active\nExpired\nCancelled",
+            "default": "Active"
+        },
+        {
+            "fieldname": "start_date",
+            "label": "Başlangıç Tarihi",
+            "fieldtype": "Date"
+        },
+        {
+            "fieldname": "end_date",
+            "label": "Bitiş Tarihi",
+            "fieldtype": "Date"
+        }
+    ],
     "module": "carigetir_core",
     "custom": 0
 }
